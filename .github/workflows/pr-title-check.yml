@@ -5,7 +5,11 @@ on:
     types:
       - opened
       - edited
+      - reopened
       - synchronize
+    branches:
+      - 'RELESE_*_*'
+  
 
 jobs:
   validate-title:
