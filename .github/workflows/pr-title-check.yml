@@ -7,9 +7,6 @@ on:
       - edited
       - reopened
       - synchronize
-    branches:
-      - 'RELEASE_*_*'
-  
 
 jobs:
   validate-title:
