@@ -1,0 +1,29 @@
+name: "Commit Message Compliance"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate-commits:
+    name: "Check Commit Messages"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history so git log can compare branches
+          fetch-depth: 0
+
+      - name: Run Commit Validation Script
+        env:
+          TARGET_BRANCH: origin/${{ github.event.pull_request.base.ref }}
+        run: |
+          chmod +x .github/scripts/validate-commits.sh
+          .github/scripts/validate-commits.sh
