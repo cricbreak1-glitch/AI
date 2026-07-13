@@ -23,7 +23,9 @@
 #!/bin/bash
 
 # Get the PR title from the first argument
-PR_TITLE="$1"
+# PR_TITLE="$1"
+
+echo "Validating Pull Request title: '$PR_TITLE'"
 
 # Check if the title is empty
 if [ -z "$PR_TITLE" ]; then
