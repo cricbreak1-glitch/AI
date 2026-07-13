@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Define the Conventional Commits regex pattern
-# Examples: "feat: description", "fix(scope): description", "docs!: description"
 REGEX="^LEGALDMS:[^0-9]+$"
 
 echo "Validating Pull Request title: '$PR_TITLE'"
@@ -11,8 +10,8 @@ if [[ ! "$PR_TITLE" =~ $REGEX ]]; then
   echo "❌ ERROR: Invalid Pull Request Title Format!"
   echo "============================================="
   echo "Your PR title must follow the Conventional Commits format."
-  echo "Example: 'feat(auth): add google sign-in' or 'fix: resolve memory leak'"
-  echo "Allowed prefixes: feat, fix, docs, style, refactor, perf, test, chore, ci, build"
+  # echo "Example: 'feat(auth): add google sign-in' or 'fix: resolve memory leak'"
+  # echo "Allowed prefixes: feat, fix, docs, style, refactor, perf, test, chore, ci, build"
   exit 1
 else
   echo "============================================="
