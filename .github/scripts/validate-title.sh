@@ -2,7 +2,7 @@
 
 # Define the Conventional Commits regex pattern
 # Examples: "feat: description", "fix(scope): description", "docs!: description"
-REGEX="^LEGALDMS-[0-9]+:.+$"
+REGEX="^LEGALDMS:[^0-9]+$"
 
 echo "Validating Pull Request title: '$PR_TITLE'"
 
